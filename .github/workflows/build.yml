@@ -16,35 +16,30 @@ jobs:
             release_path: "build/Release"
             platform: "win"
             type: "desktop"
-            folder: "opencv"
 
           - name: "Linux"
             os: ubuntu-latest
             release_path: "build"
             platform: "linux"
             type: "desktop"
-            folder: "opencv"
 
           - name: "macOS"
             os: macos-latest
             release_path: "build"
             platform: "osx"
             type: "desktop"
-            folder: "opencv"
           
           - name: "android"
             os: ubuntu-latest
             release_path: build
             platform: "android"
             type: "mobile"
-            folder: "opencv"
           
           - name: ios
             os: macos-latest
             release_path: build
             platform: "ios"
             type: "mobile"
-            folder: "opencv2.framework"
 
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.name }}
