@@ -228,3 +228,19 @@ jobs:
           asset_name: opencv-android.zip
           asset_path: export_artifacts/artifact-android/opencv-${{ inputs.ref }}-android.zip
           asset_content_type: application/zip
+  delete_artifacts:
+    name: delete_artifacts
+    if: always()
+    needs: update_release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: delete artifacts
+        uses: geekyeggo/delete-artifact@v1
+        with:
+          name: |
+            artifact-android
+            artifact-ios
+            artifact-linux
+            artifact-osx
+            artifact-win
